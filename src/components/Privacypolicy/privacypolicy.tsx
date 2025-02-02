@@ -7,10 +7,11 @@ const PrivacyPolicy = () => {
         {/* Page Title */}
         <SectionTitle
           title="Privacy Policy for Accotomate"
-          paragraph="Effective Date: Today"
+          paragraph="Effective Date: &quot;Today&quot;"
           center
           mb="40px"
         />
+
 
         {/* Introduction */}
         <div className="mb-12">
@@ -111,8 +112,9 @@ const PrivacyPolicy = () => {
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Updates to This Policy</h2>
           <p className="text-gray-600">
-            We may update this Privacy Policy periodically. Changes will be posted on this page, and the "Effective Date" will be updated accordingly.
+            We may update this Privacy Policy periodically. Changes will be posted on this page, and the &quot;Effective Date&quot; will be updated accordingly.
           </p>
+
         </div>
 
         {/* Contact Us */}
