@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 const QuickbooksPage = () => {
   return (
     <>
-      <Breadcrumb
+      {/* <Breadcrumb
         pageName="QuickBooks Workflow Automation"
         description="Optimize your financial management with our QuickBooks-Google Sheets Automation powered by G-Accon. This integration enables seamless real-time data syncing, automated financial reports, and streamlined workflows between QuickBooks and Google Sheets."
-      />
+      /> */}
 
       <QuickBooksAutomationPage />
     </>

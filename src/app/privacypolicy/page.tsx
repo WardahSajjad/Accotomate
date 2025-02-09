@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 const PrivacypolicyPage = () => {
   return (
     <>
-      <Breadcrumb
+      {/* <Breadcrumb
         pageName="Privacy Policy"
         description="Learn how we collect, use, and protect your information."
-      />
+      /> */}
 
       <PrivacyPolicy />
     </>

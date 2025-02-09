@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 const ContactPage = () => {
   return (
     <>
-      <Breadcrumb
+      {/* <Breadcrumb
         pageName="Contact Page"
         description="Discuss your requirements, learn about custom pricing, or request a demonstration."
-      />
+      /> */}
 
       <Contact />
     </>

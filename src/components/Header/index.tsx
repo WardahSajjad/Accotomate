@@ -54,13 +54,20 @@ const Header = () => {
                 className={`header-logo block w-full ${sticky ? "py-5 lg:py-2" : "py-8"
                   } `}
               >
-                {/* <Image
-                  src="/images/logo/1.png"
+                <Image
+                  src="/images/logo/5.png"
                   alt="logo"
-                  width={100}
-                  height={30}
-                  className="w-full dark:hidden"
-                /> */}
+                  width={80} // Reduce the width
+                  height={80} // Reduce the height
+                  className="max-w-[50px] dark:hidden" // Ensure it doesn’t exceed a specific width
+                />
+                <Image
+                  src="/images/logo/5.png"
+                  alt="logo"
+                  className="hidden max-w-[50px]  dark:block"
+                  width={80}
+                  height={80}
+                />
 
               </Link>
             </div>

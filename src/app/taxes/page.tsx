@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 const QuickbooksPage = () => {
   return (
     <>
-      <Breadcrumb
+      {/* <Breadcrumb
         pageName="UK Tax Services"
         description="Stay compliant with UK tax laws through expert bookkeeping and accounting services. We offer tailored solutions for VAT, Corporation Tax, Income Tax, and PAYE, ensuring accurate filing and timely submissions. Let us handle your tax obligations, so you can focus on growing your business."
-      />
+      /> */}
 
       <UKTax />
     </>

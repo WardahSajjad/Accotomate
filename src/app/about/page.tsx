@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <>
-      <Breadcrumb
+      {/* <Breadcrumb
         pageName="About Accotomate"
         description="Accotomate was born from a simple yet powerful idea: to help businesses streamline their financial operations through technology and expertise. We empower businesses to save time, reduce errors, and gain control over their finances."
-      />
+      /> */}
       <AboutSectionOne />
       <AboutSectionTwo />
     </>

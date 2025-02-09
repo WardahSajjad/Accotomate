@@ -36,20 +36,21 @@ const menuData: Menu[] = [
         path: "/bookkeeping",
         newTab: false,
       },
+
+
+      {
+        id: 44,
+        title: "Financial Workflow Automation",
+        path: "/quickbooks",
+        newTab: false,
+      },
+
       {
         id: 42,
         title: "UK Taxes",
         path: "/taxes",
         newTab: false,
       },
-
-      {
-        id: 44,
-        title: "QuickBooks-GSheets Automation",
-        path: "/quickbooks",
-        newTab: false,
-      },
-
     ],
   },
 ];

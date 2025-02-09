@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 const BookkeepingPage = () => {
   return (
     <>
-      <Breadcrumb
+      {/* <Breadcrumb
         pageName="Tech-driven bookkeeping"
         description="Tech-Driven Bookkeeping At Accotomate, we redefine bookkeeping by integrating advanced technology and automation into every aspect of financial management."
-      />
+      /> */}
 
       <Bookkeeping />
     </>

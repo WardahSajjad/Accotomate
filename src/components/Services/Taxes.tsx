@@ -65,6 +65,22 @@ const UKTax = () => {
           </div>
         </div>
       </div>
+      <section className="py-20" style={{ backgroundColor: "#fd9e3a" }}>
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+            Transform Your Tax Services
+          </h2>
+          <p className="mt-4 text-lg text-gray-200">
+            Let Accotomate handle your Taxes with intelligent automation and tech-forward solutions.
+          </p>
+          <a
+            href="/contact"
+            className="mt-8 inline-block rounded-lg bg-white px-8 py-3 text-lg font-semibold text-orange-400 transition-all hover:bg-gray-100"
+          >
+            Contact Us
+          </a>
+        </div>
+      </section>
     </section>
   );
 };

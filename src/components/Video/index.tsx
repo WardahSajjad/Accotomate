@@ -13,7 +13,7 @@ const Video = () => {
       <div className="container">
         <SectionTitle
           title="We are ready to help"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          paragraph="Seamlessly integrate journal entries between QuickBooks and Google Sheets without manual data entry. Say goodbye to duplication errors and time-consuming uploads—let your data flow effortlessly between systems."
           center
           mb="80px"
         />
