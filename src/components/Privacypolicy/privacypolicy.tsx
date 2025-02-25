@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
         {/* Page Title */}
         <SectionTitle
           title="Privacy Policy for Accotomate"
-          paragraph="Effective Date: &quot;Today&quot;"
+          paragraph=""
           center
           mb="40px"
         />
@@ -96,7 +96,7 @@ const PrivacyPolicy = () => {
             <li>Restrict or object to certain data processing activities.</li>
           </ul>
           <p className="text-gray-600 mt-4">
-            To exercise these rights, contact us at <a href="mailto:[Insert Contact Email]" className="text-blue-600 hover:underline">[Insert Contact Email]</a>.
+            To exercise these rights, contact us at <a href="mailto:Maryam@accotomate.com" className="text-blue-600 hover:underline">Maryam@accotomate.com</a>.
           </p>
         </div>
 
@@ -124,11 +124,11 @@ const PrivacyPolicy = () => {
             For questions or concerns regarding this Privacy Policy, please contact us at:
           </p>
           <p className="text-gray-600 mt-2">
-            Email: <a href="mailto:[Insert Email Address]" className="text-blue-600 hover:underline">[Insert Email Address]</a>
+            Email: <a href="mailto:Maryam@accotomate.com" className="text-blue-600 hover:underline">Maryam@accotomate.com</a>
           </p>
-          <p className="text-gray-600">
+          {/* <p className="text-gray-600">
             Address: [Insert Business Address]
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

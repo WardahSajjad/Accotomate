@@ -32,7 +32,7 @@ const List = ({ text }: { text: string }) => (
 const features = [
   { title: "End-to-End Bookkeeping Automation", description: "Automate transaction recording, bank reconciliations, and financial reporting with AI-powered tools. Say goodbye to manual entries and save hours of valuable time." },
   { title: "Real-Time Financial Insights", description: "Gain access to up-to-date financial data through cloud-based systems that keep your business in sync and ready for decision-making." },
-  { title: "Expense Tracking and Categorization", description: "Automatically track, categorize, and analyze expenses to maintain financial accuracy and transparency." },
+  { title: "Bills and Invoices Tracking Categorization", description: "Automatically track and analyze bills and invoices to maintain financial accuracy and transparency." },
   { title: "Invoice and Payment Management", description: "Automate the creation, tracking, and payment of invoices to streamline cash flow and ensure timely payments." },
   { title: "Payroll Processing Integration", description: "Link payroll systems seamlessly with bookkeeping platforms for automated salary calculations, deductions, and reporting." },
   { title: "Tax-Ready Records", description: "Keep your financial records organized and compliant for smooth tax submissions and audits, eliminating last-minute stress." },

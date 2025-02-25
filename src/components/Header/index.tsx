@@ -164,7 +164,7 @@ const Header = () => {
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
                 <a
-                  href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0phg9irsX_1xKIxPVBLCnGW6S9a8uzsAXv19harHzA80XxlOLZyCrfUX17wBCfTAh94nOO9Dqm?gv=true"
+                  href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1HEZeCjTcJEcfz5SIb7evIiHrFITZFNlOkebLYQNkAo2C34uIh-WvICehZ9xQ9bbWuEGZFl33D?gv=true"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-sm bg-primary px-4 py-2 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"

@@ -7,7 +7,7 @@ import { FaSyncAlt, FaChartLine, FaDatabase, FaTasks, FaFileInvoiceDollar, FaCli
 export default function QuickBooksAutomationPage() {
   const features = [
     { icon: FaDatabase, text: "Financial Data Consolidation" },
-    { icon: FaSyncAlt, text: "Automated Transaction Categorization" },
+    { icon: FaSyncAlt, text: "Ledger reconciliations" },
     { icon: FaClipboardCheck, text: "Scheduled Bank Reconciliations" },
     { icon: FaChartPie, text: "Budgeting & Forecasting Automation" },
     { icon: FaTasks, text: "Adhoc Management Reports" },
