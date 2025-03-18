@@ -5,24 +5,24 @@ import SingleTestimonial from "./SingleTestimonial";
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Musharof Chy",
-    designation: "Founder @TailGrids",
+    name: "Dania",
+    designation: "Founder @Techies",
     content:
       "Accotomate Took Our Finances to the Next Level. We’ve been using Accotomate for our bookkeeping and tax services for over a year now, and the results have been remarkable.Their use of technology to automate processes and streamline our workflows has saved us hours every week.Plus, their attention to detail with UK tax filings has kept us compliant and stress- free.A fantastic partner for any business!",
     star: 5,
   },
   {
     id: 2,
-    name: "Devid Weilium",
-    designation: "Founder @UIdeck",
+    name: "Wardah",
+    designation: "Founder @Alhubcollection",
     content:
       "Accotomate has been a game-changer for our business. Their team is extremely professional and proactive in streamlining our financial processes. Their expertise in QuickBooks integration and business process workflows has made everything so much more efficient. We can now focus on growing our business with peace of mind knowing our finances are in good hands.",
     star: 5,
   },
   {
     id: 3,
-    name: "Lethium Frenci",
-    designation: "Founder @Lineicons",
+    name: "Samad",
+    designation: "Founder @Neraton",
     content:
       "Tech-Savvy and Results-Driven. Our experience with Accotomate has been excellent. They've saved us time and reduced errors, their tech-driven approach to bookkeeping and business workflows has made a huge difference. The team is always available to support us and offer tailored advice. We’ve seen a significant reduction in errors and an increase in efficiency. I can’t recommend them enough!",
     star: 5,
