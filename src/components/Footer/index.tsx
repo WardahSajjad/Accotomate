@@ -27,7 +27,8 @@ const Footer = () => {
                   />
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                  We provide intelligent automation and financial management solutions that empower businesses to thrive.
+                  We provide intelligent automation and financial management
+                  solutions that empower businesses to thrive.
                 </p>
                 <div className="flex items-center">
                   <a
@@ -67,7 +68,7 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a
-                    href="tel:+923095977976"
+                    href="tel:+44 7490 031997"
                     aria-label="Phone"
                     className="ml-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
@@ -83,7 +84,7 @@ const Footer = () => {
                         fill="currentColor"
                       />
                     </svg>
-                    +92 309 5977976
+                    +44 7490 031997
                   </a>
                 </div>
               </div>
@@ -131,8 +132,6 @@ const Footer = () => {
               </div>
             </div>
 
-
-
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
@@ -171,8 +170,7 @@ const Footer = () => {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           <div className="py-8">
             <p className="text-center text-base text-body-color dark:text-white">
-              All Rights Reserved
-              @Accotomate - 2025
+              All Rights Reserved @Accotomate - 2025
               {/* Template by{" "}
               <a
                 href="http://uideck.com"
