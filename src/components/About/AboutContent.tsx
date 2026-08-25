@@ -62,10 +62,10 @@ export default function AboutContent() {
         title="Accountants who write code"
         lede="We started Accotomate on a simple observation: the work that consumes a finance team's week is rarely the work that needs their judgement. So we automate the rest."
         primaryCta={{ label: "Work with us", href: "/contact" }}
-        image={{
-          src: "/images/about/about1.jpg",
-          alt: "Illustration of accounting work: financial reports, a calculator, receipts and colleagues reviewing figures.",
-        }}
+        // image={{
+        //   src: "/images/about/about1.jpg",
+        //   alt: "Illustration of accounting work: financial reports, a calculator, receipts and colleagues reviewing figures.",
+        // }}
       />
 
       <Section tone="surface" space="loose">

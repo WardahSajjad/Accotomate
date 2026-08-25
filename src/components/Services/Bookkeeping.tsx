@@ -71,10 +71,10 @@ export default function Bookkeeping() {
         lede="We replace manual bookkeeping with intelligent, automated workflows — built for accuracy and speed, and integrated with the accounting software you already run."
         primaryCta={{ label: "Get started", href: site.bookingUrlServices }}
         secondaryCta={{ label: "Talk to us", href: "/contact" }}
-        image={{
-          src: "/images/services/bookkeeping.png",
-          alt: "Illustration of a bookkeeping workflow: a clipboard of records, a calculator and a person reviewing figures on a phone.",
-        }}
+        // image={{
+        //   src: "/images/services/bookkeeping.png",
+        //   alt: "Illustration of a bookkeeping workflow: a clipboard of records, a calculator and a person reviewing figures on a phone.",
+        // }}
       />
 
       <FeatureGrid
