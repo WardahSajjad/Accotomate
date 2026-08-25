@@ -1,34 +1,89 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Fonts are loaded by next/font in app/layout.tsx:
+   --font-display (Space Grotesk) and --font-mono (JetBrains Mono).
+   Do not @import them from Google here as well. */
+
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
-    font-family: "Inter", sans-serif;
-    /* background-color: white; */
+    @apply bg-surface text-body font-sans font-medium text-ink;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-ink;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-accent text-ink;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ink ring-offset-2 ring-offset-surface;
   }
 }
 
 @layer components {
-  input[type="checkbox"]:checked~label span svg {
-    @apply inline-flex;
+  /* The single most repeated device on the reference site: a small,
+     uppercase, tracked-out monospace label. */
+  .label {
+    @apply font-mono text-label uppercase;
   }
 
-  .sticky .header-logo {
-    @apply py-5 lg:py-2;
+  .label-lg {
+    @apply font-mono text-label-lg uppercase;
+  }
+}
+
+@layer utilities {
+  .on-accent :focus-visible {
+    @apply ring-ink ring-offset-accent;
   }
 
-  .sticky .menu-scroll.active {
-    @apply opacity-70;
+  .on-ink :focus-visible {
+    @apply ring-white ring-offset-ink;
   }
 
-  input#togglePlan:checked~.dot {
-    @apply translate-x-full;
+  .animate-delay-1 {
+    animation-delay: 70ms;
+  }
+  .animate-delay-2 {
+    animation-delay: 140ms;
+  }
+  .animate-delay-3 {
+    animation-delay: 210ms;
+  }
+  .animate-delay-4 {
+    animation-delay: 280ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  input#checkboxLabel:checked~.box span {
-    @apply opacity-100;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

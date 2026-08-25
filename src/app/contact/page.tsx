@@ -1,25 +1,14 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import type { Metadata } from "next";
+
 import Contact from "@/components/Contact";
 
-import { Metadata } from "next";
-
 export const metadata: Metadata = {
-  title: "Contact Page | Accotomate",
-  description: "This is Contact Page for Accotomate",
-  // other metadata
+  title: "Contact",
+  description:
+    "Talk to Accotomate about automating your bookkeeping, or open a support ticket with our team.",
+  alternates: { canonical: "/contact" },
 };
 
-const ContactPage = () => {
-  return (
-    <>
-      {/* <Breadcrumb
-        pageName="Contact Page"
-        description="Discuss your requirements, learn about custom pricing, or request a demonstration."
-      /> */}
-
-      <Contact />
-    </>
-  );
-};
-
-export default ContactPage;
+export default function ContactPage() {
+  return <Contact />;
+}

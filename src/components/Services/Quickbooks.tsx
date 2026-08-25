@@ -1,105 +1,129 @@
-"use client";
-import { motion } from "framer-motion";
+import Container from "@/components/ui/Container";
+import CtaBand from "@/components/ui/CtaBand";
+import FeatureGrid, { type FeatureItem } from "@/components/ui/FeatureGrid";
+import PageHero from "@/components/ui/PageHero";
+import Reveal from "@/components/ui/Reveal";
+import Section from "@/components/ui/Section";
+import SectionHeading from "@/components/ui/SectionHeading";
+import VideoLightbox from "@/components/ui/VideoLightbox";
+import { site } from "@/content/site";
 
-import SectionTitle from "../Common/SectionTitle";
-import { FaSyncAlt, FaChartLine, FaDatabase, FaTasks, FaFileInvoiceDollar, FaClipboardCheck, FaMoneyBillWave, FaChartPie } from "react-icons/fa";
+const capabilities: FeatureItem[] = [
+  {
+    title: "Financial data consolidation",
+    body: "Transactions, balances and ledgers pulled into one structured sheet instead of a folder of exports.",
+  },
+  {
+    title: "Ledger reconciliations",
+    body: "Ledgers reconcile against source data automatically, with exceptions surfaced rather than buried.",
+  },
+  {
+    title: "Scheduled bank reconciliations",
+    body: "Reconciliation runs on a schedule you set, so the position is current when you look at it.",
+  },
+  {
+    title: "Budgeting and forecasting",
+    body: "Budget and forecast models update themselves as actuals land, keeping projections honest.",
+  },
+  {
+    title: "Ad-hoc management reports",
+    body: "Custom report templates that rebuild on new data — no reformatting, no stale figures.",
+  },
+  {
+    title: "AP/AR tracking",
+    body: "Payables and receivables ageing stays live, so nothing slips past its due date unnoticed.",
+  },
+  {
+    title: "Real-time insight",
+    body: "Cash flow, profitability and outstanding liabilities visible the moment the data changes.",
+  },
+  {
+    title: "Ongoing optimisation",
+    body: "We keep tuning the workflows as your reporting needs change. It isn't a build-and-leave.",
+  },
+];
 
-export default function QuickBooksAutomationPage() {
-  const features = [
-    { icon: FaDatabase, text: "Financial Data Consolidation" },
-    { icon: FaSyncAlt, text: "Ledger reconciliations" },
-    { icon: FaClipboardCheck, text: "Scheduled Bank Reconciliations" },
-    { icon: FaChartPie, text: "Budgeting & Forecasting Automation" },
-    { icon: FaTasks, text: "Adhoc Management Reports" },
-    { icon: FaFileInvoiceDollar, text: "AP/AR Tracking and Management" },
-    { icon: FaChartLine, text: "Real-Time Financial Insights" },
-    { icon: FaMoneyBillWave, text: "Continuous Optimization & Support" },
-  ];
+const steps = [
+  {
+    number: "01",
+    title: "Map your ledger",
+    body: "We build a template that matches your chart of accounts and entry structure — once.",
+  },
+  {
+    number: "02",
+    title: "Upload in bulk",
+    body: "A month of journal entries posts from that template in a single action, not line by line.",
+  },
+  {
+    number: "03",
+    title: "Stays in sync",
+    body: "Scheduled refreshes keep QuickBooks and Sheets aligned, with exceptions flagged for review.",
+  },
+];
 
+export default function Quickbooks() {
   return (
-    <section id="quickbooks-automation" className="pt-16 md:pt-20 lg:pt-28">
-      <section className="relative py-20 md:py-32">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl lg:text-5xl"
-          >
-            Financial Workflow Automation: <br />Effortless Financial Data Sync <br />for Smarter Operations
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-10 mt-10 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300 md:text-xl"
-          >
-            Our financial workflow automation ensures seamless data synchronization between QuickBooks and Google Sheets, eliminating manual exports and outdated reports. Transactions, balances, AP/AR aging, reconciliations, etc. are automatically pulled into structured spreadsheets, enabling real-time financial tracking.
+    <>
+      <PageHero
+        eyebrow="Financial Workflow Automation"
+        title="QuickBooks and Sheets, always in sync"
+        lede="No manual exports, no outdated reports. Transactions, balances, AP/AR ageing and reconciliations flow into structured spreadsheets automatically — and stay current."
+        primaryCta={{ label: "Get started", href: site.bookingUrlServices }}
+        secondaryCta={{ label: "Talk to us", href: "/contact" }}
+        // media={
+        //   <div>
+        //     <VideoLightbox
+        //       videoId="L61p2uyiMSo"
+        //       poster="/images/video/webimg.jpg"
+        //       posterAlt="The Accotomate Journal Entry Integration open in Google Sheets, showing posted journal entries and the template upload panel."
+        //       label="Watch the integration demo"
+        //     />
+        //     <p className="label mt-4 text-ink-soft">
+        //       Live client account — press play
+        //     </p>
+        //   </div>
+        // }
+      />
 
-          </motion.p>
-          <a
-            href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0phg9irsX_1xKIxPVBLCnGW6S9a8uzsAXv19harHzA80XxlOLZyCrfUX17wBCfTAh94nOO9Dqm?gv=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" rounded-sm bg-primary px-8 py-3 mt-50 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
-            style={{ backgroundColor: "#fa8705", textAlign: "center", }}
-          >
-            Get Started
-          </a>
-        </div>
-      </section>
+      <Section tone="subtle" space="loose">
+        <Container width="wide">
+          <SectionHeading
+            eyebrow="How the integration works"
+            title="Three steps, then it runs itself"
+            lede="We work inside the QuickBooks account and Google Workspace you already have. Nothing to migrate."
+          />
 
-      <div className="py-20 px-9">
-        <SectionTitle
-          title="Financial Workflow Automation"
-          paragraph="Custom report templates dynamically update as new data flows in, providing instant insights into cash flow, profitability, and outstanding liabilities. With automated refresh schedules, your reports remain current without constant intervention, allowing for more accurate forecasting, budgeting, and financial analysis. 
+          <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+            {steps.map((step, index) => (
+              <li key={step.number} className="h-full">
+                <Reveal
+                  delay={index * 90}
+                  className="flex h-full flex-col border-t-2 border-accent pt-6"
+                >
+                  <span className="label text-accent">{step.number}</span>
+                  <h3 className="mt-4 text-h3 text-ink">{step.title}</h3>
+                  <p className="mt-3 font-normal leading-relaxed text-ink-muted">
+                    {step.body}
+                  </p>
+                </Reveal>
+              </li>
+            ))}
+          </ol>
+        </Container>
+      </Section>
 
-We're excited to offer a variety of services, including but not limited to:"
-          mb="44px"
-        />
+      <FeatureGrid
+        eyebrow="Capabilities"
+        title="What we automate"
+        lede="Custom report templates update as new data flows in, giving you accurate forecasting and analysis without the manual rebuild."
+        items={capabilities}
+      />
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-5"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } }
-          }}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="flex items-center p-5 bg-white shadow-md rounded-lg border border-gray-200 hover:shadow-lg transition"
-            >
-              <feature.icon className="text-orange-400 text-3xl mr-4" />
-              <p className="text-lg font-medium text-gray-800">{feature.text}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* CTA Section */}
-      <motion.section
-        className="py-20 mt-12 bg-orange-400 text-white text-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">Transform Your Financial Workflows</h2>
-        <p className="mt-4 text-lg max-w-2xl mx-auto">
-          Let Accotomate handle your financial workflows with intelligent automation and tech-forward solutions.
-        </p>
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href="/contact"
-          className="mt-8 inline-block rounded-lg bg-white px-8 py-3 text-lg font-semibold text-orange-400 transition-all hover:bg-gray-100"
-        >
-          Contact Us
-        </motion.a>
-      </motion.section>
-    </section >
+      <CtaBand
+        title="Stop exporting spreadsheets by hand."
+        lede="Book a 30-minute call and we'll map your QuickBooks reporting workflow and show you what we'd sync first."
+        bookingUrl={site.bookingUrlServices}
+      />
+    </>
   );
 }

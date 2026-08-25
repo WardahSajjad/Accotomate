@@ -1,46 +1,33 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
-export default function ScrollToTop() {
-  const [isVisible, setIsVisible] = useState(false);
+import { cn } from "@/lib/cn";
 
-  // Top: 0 takes us all the way back to the top of the page
-  // Behavior: smooth keeps it smooth!
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+export default function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Button is displayed after scrolling for 500 pixels
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", toggleVisibility);
-
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    const onScroll = () => setVisible(window.scrollY > 600);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <div className="fixed bottom-8 right-8 z-[99]">
-      {isVisible && (
-        <div
-          style={{
-            backgroundColor: "#fa8705"
-          }}
-          onClick={scrollToTop}
-          aria-label="scroll to top"
-          className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-md bg-primary text-white shadow-md transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp"
-        >
-          <span className="mt-[6px] h-3 w-3 rotate-45 border-l border-t border-white" ></span>
-        </div>
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Scroll to top"
+      tabIndex={visible ? 0 : -1}
+      className={cn(
+        "fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-sm bg-ink text-white shadow-pop transition-all duration-200 hover:bg-accent hover:text-ink",
+        visible ? "opacity-100" : "pointer-events-none translate-y-2 opacity-0",
       )}
-    </div>
+    >
+      <svg viewBox="0 0 20 20" aria-hidden="true" className="h-4 w-4 fill-none stroke-current" strokeWidth="2">
+        <path d="M10 16V4m0 0L4.5 9.5M10 4l5.5 5.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </button>
   );
 }

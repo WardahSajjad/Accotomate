@@ -1,24 +1,14 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
-import QuickBooksAutomationPage from "@/components/Services/Quickbooks";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+
+import Quickbooks from "@/components/Services/Quickbooks";
 
 export const metadata: Metadata = {
-  title: "Quickbooks| Accotomate",
-  description: "This is the Quickbooks page for Accotomate.",
-  // other metadata
+  title: "Financial Workflow Automation",
+  description:
+    "Real-time sync between QuickBooks and Google Sheets — consolidated data, scheduled reconciliations, AP/AR tracking and reports that refresh themselves.",
+  alternates: { canonical: "/quickbooks" },
 };
 
-const QuickbooksPage = () => {
-  return (
-    <>
-      {/* <Breadcrumb
-        pageName="QuickBooks Workflow Automation"
-        description="Optimize your financial management with our QuickBooks-Google Sheets Automation powered by G-Accon. This integration enables seamless real-time data syncing, automated financial reports, and streamlined workflows between QuickBooks and Google Sheets."
-      /> */}
-
-      <QuickBooksAutomationPage />
-    </>
-  );
-};
-
-export default QuickbooksPage;
+export default function QuickbooksPage() {
+  return <Quickbooks />;
+}

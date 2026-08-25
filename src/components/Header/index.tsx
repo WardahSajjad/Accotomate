@@ -1,188 +1,227 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import ThemeToggler from "./ThemeToggler";
-import menuData from "./menuData";
+import { useEffect, useRef, useState } from "react";
 
-const Header = () => {
-  // Navbar toggle
-  const [navbarOpen, setNavbarOpen] = useState(false);
-  const navbarToggleHandler = () => {
-    setNavbarOpen(!navbarOpen);
-  };
+import { primaryNav, servicesNav, site } from "@/content/site";
+import { cn } from "@/lib/cn";
 
-  // Sticky Navbar
-  const [sticky, setSticky] = useState(false);
-  const handleStickyNavbar = () => {
-    if (window.scrollY >= 80) {
-      setSticky(true);
-    } else {
-      setSticky(false);
-    }
-  };
+function ChevronDown({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      aria-hidden="true"
+      className={cn("h-3.5 w-3.5 transition-transform duration-200", className)}
+    >
+      <path
+        d="M5 7.5 10 12.5 15 7.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+/**
+ * A floating accent-coloured pill, mirroring the reference site's nav
+ * (`.nav_wrapper` sits on --primary--yellow with a 0.5rem radius).
+ */
+export default function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyNavbar);
-  });
+    setMobileOpen(false);
+    setServicesOpen(false);
+  }, [pathname]);
 
-  // submenu handler
-  const [openIndex, setOpenIndex] = useState(-1);
-  const handleSubmenu = (index) => {
-    if (openIndex === index) {
-      setOpenIndex(-1);
-    } else {
-      setOpenIndex(index);
-    }
-  };
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setMobileOpen(false);
+      setServicesOpen(false);
+    };
+    const onPointerDown = (event: MouseEvent) => {
+      if (!servicesRef.current?.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
 
-  const usePathName = usePathname();
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("mousedown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("mousedown", onPointerDown);
+    };
+  }, []);
+
+  const isActive = (path: string) => pathname === path;
 
   return (
-    <>
-      <header
-        className={`header left-0 top-0 z-40 flex w-full items-center ${sticky
-          ? "dark:bg-gray-dark dark:shadow-sticky-dark fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition"
-          : "absolute bg-transparent"
-          }`}
-      >
-        <div className="container">
-          <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
-              <Link
-                href="/"
-                className={`header-logo block w-full ${sticky ? "py-5 lg:py-2" : "py-8"
-                  } `}
+    <header className="on-accent sticky top-0 z-50 px-3 pt-3 md:px-5 md:pt-5">
+      <div className="mx-auto w-full max-w-[1400px] rounded-lg bg-accent">
+        <div className="flex items-center justify-between gap-6 px-4 py-3 md:px-6">
+          <Link
+            href="/"
+            className="flex shrink-0 items-center gap-2.5"
+            aria-label="Accotomate home"
+          >
+            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-white">
+              <Image
+                src="/images/logo/5.png"
+                alt=""
+                width={199}
+                height={210}
+                priority
+                className="h-6 w-auto"
+              />
+            </span>
+            <span className="text-[1.125rem] font-bold tracking-[-0.03em] text-ink">
+              accotomate
+            </span>
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
+            <div ref={servicesRef} className="relative">
+              <button
+                type="button"
+                onClick={() => setServicesOpen((open) => !open)}
+                aria-expanded={servicesOpen}
+                className="label flex items-center gap-2 text-ink transition-opacity hover:opacity-70"
               >
-                <Image
-                  src="/images/logo/5.png"
-                  alt="logo"
-                  width={80} // Reduce the width
-                  height={80} // Reduce the height
-                  className="max-w-[50px] dark:hidden" // Ensure it doesn’t exceed a specific width
-                />
-                <Image
-                  src="/images/logo/5.png"
-                  alt="logo"
-                  className="hidden max-w-[50px]  dark:block"
-                  width={80}
-                  height={80}
-                />
+                Services
+                <ChevronDown className={servicesOpen ? "rotate-180" : undefined} />
+              </button>
 
-              </Link>
-            </div>
-            <div className="flex w-full items-center justify-between px-4" >
-              <div>
-                <button
-                  onClick={navbarToggleHandler}
-                  id="navbarToggler"
-                  aria-label="Mobile Menu"
-                  className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
-                >
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${navbarOpen ? " top-[7px] rotate-45" : " "
-                      }`}
-                  />
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${navbarOpen ? "opacity-0 " : " "
-                      }`}
-                  />
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${navbarOpen ? " top-[-8px] -rotate-45" : " "
-                      }`}
-                  />
-                </button>
-                <nav
-                  id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${navbarOpen
-                    ? "visibility top-full opacity-100"
-                    : "invisible top-[120%] opacity-0"
-                    }`}
-                >
-                  <ul className="block lg:flex lg:space-x-12">
-                    {menuData.map((menuItem, index) => (
-                      <li key={index} className="group relative">
-                        {menuItem.path ? (
-                          <Link
-                            style={{
-                              color: "#fa8705"
-
-                            }}
-                            href={menuItem.path}
-                            className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${usePathName === menuItem.path
-                              ? "text-primary dark:text-white"
-                              : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
-                              }`}
-                          >
-                            {menuItem.title}
-                          </Link>
-                        ) : (
-                          <>
-                            <p
-                              onClick={() => handleSubmenu(index)}
-                              style={{
-                                color: "#fa8705"
-
-                              }}
-                              className="flex cursor-pointer items-center justify-between py-2 text-base text-dark group-hover:text-primary dark:text-white/70 dark:group-hover:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
-                            >
-                              {menuItem.title}
-                              <span className="pl-3">
-                                <svg width="25" height="24" viewBox="0 0 25 24">
-                                  <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M6.29289 8.8427C6.68342 8.45217 7.31658 8.45217 7.70711 8.8427L12 13.1356L16.2929 8.8427C16.6834 8.45217 17.3166 8.45217 17.7071 8.8427C18.0976 9.23322 18.0976 9.86639 17.7071 10.2569L12 15.964L6.29289 10.2569C5.90237 9.86639 5.90237 9.23322 6.29289 8.8427Z"
-                                    fill="currentColor"
-                                  />
-                                </svg>
-                              </span>
-                            </p>
-                            <div
-                              className={`submenu relative left-0 top-full rounded-sm bg-white transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${openIndex === index ? "block" : "hidden"
-                                }`}
-                            >
-                              {menuItem.submenu.map((submenuItem, index) => (
-                                <Link
-                                  href={submenuItem.path}
-                                  key={index}
-                                  className="block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white lg:px-3"
-                                  style={{
-
-                                  }}
-                                >
-                                  {submenuItem.title}
-                                </Link>
-                              ))}
-                            </div>
-                          </>
-                        )}
-                      </li>
+              {servicesOpen ? (
+                <div className="absolute left-1/2 top-full z-50 w-[320px] -translate-x-1/2 pt-4">
+                  <div className="animate-fade-up overflow-hidden rounded-lg bg-accent shadow-pop">
+                    {servicesNav.map((item) => (
+                      <Link
+                        key={item.path}
+                        href={item.path}
+                        className="block border-b border-line-onAccent px-5 py-4 transition-colors last:border-b-0 hover:bg-ink/10"
+                      >
+                        <span className="label block text-ink">{item.title}</span>
+                        <span className="mt-1.5 block font-mono text-[0.75rem] leading-snug text-ink/60">
+                          {item.blurb}
+                        </span>
+                      </Link>
                     ))}
-                  </ul>
-                </nav>
-              </div>
-              <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <a
-                  href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1HEZeCjTcJEcfz5SIb7evIiHrFITZFNlOkebLYQNkAo2C34uIh-WvICehZ9xQ9bbWuEGZFl33D?gv=true"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-sm bg-primary px-4 py-2 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
-                  style={{ backgroundColor: "#fa8705", textAlign: "center" }}
-                >
-                  Book Demo
-                </a>
-
-                <div>
-                  <ThemeToggler />
+                  </div>
                 </div>
-              </div>
+              ) : null}
             </div>
-          </div>
-        </div>
-      </header>
-    </>
-  );
-};
 
-export default Header;
+            {primaryNav.map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                className={cn(
+                  "label text-ink transition-opacity hover:opacity-70",
+                  isActive(item.path) && "underline underline-offset-4",
+                )}
+              >
+                {item.title}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden shrink-0 lg:block">
+            <a
+              href={site.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="label inline-flex items-center rounded-pill bg-ink px-6 py-3 text-white transition-colors hover:bg-ink/85"
+            >
+              Book a demo
+            </a>
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            type="button"
+            onClick={() => setMobileOpen((open) => !open)}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            className="flex h-10 w-10 items-center justify-center rounded-md text-ink lg:hidden"
+          >
+            <span className="relative block h-4 w-6">
+              <span
+                className={cn(
+                  "absolute left-0 block h-[2px] w-6 bg-current transition-all duration-300",
+                  mobileOpen ? "top-[7px] rotate-45" : "top-0",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute left-0 top-[7px] block h-[2px] w-6 bg-current transition-opacity duration-200",
+                  mobileOpen && "opacity-0",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute left-0 block h-[2px] w-6 bg-current transition-all duration-300",
+                  mobileOpen ? "top-[7px] -rotate-45" : "top-[14px]",
+                )}
+              />
+            </span>
+          </button>
+        </div>
+
+        {/* Mobile panel */}
+        <div id="mobile-nav" hidden={!mobileOpen} className="lg:hidden">
+          <nav
+            className="border-t border-line-onAccent px-4 py-5 md:px-6"
+            aria-label="Mobile"
+          >
+            <p className="font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-ink/50">
+              Services
+            </p>
+            <div className="mb-5 mt-3 flex flex-col">
+              {servicesNav.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className="label border-b border-line-onAccent py-3 text-ink"
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+
+            <div className="flex flex-col">
+              {primaryNav.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className="label border-b border-line-onAccent py-3 text-ink"
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+
+            <a
+              href={site.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="label mt-5 flex w-full items-center justify-center rounded-pill bg-ink px-6 py-4 text-white"
+            >
+              Book a demo
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+  );
+}

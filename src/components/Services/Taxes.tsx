@@ -1,88 +1,109 @@
-import Image from "next/image";
-import SectionTitle from "../Common/SectionTitle";
+import Container from "@/components/ui/Container";
+import CtaBand from "@/components/ui/CtaBand";
+import FeatureGrid, { type FeatureItem } from "@/components/ui/FeatureGrid";
+import PageHero from "@/components/ui/PageHero";
+import Reveal from "@/components/ui/Reveal";
+import Section from "@/components/ui/Section";
+import SectionHeading from "@/components/ui/SectionHeading";
+import { site } from "@/content/site";
 
-const checkIcon = (
-  <svg width="16" height="13" viewBox="0 0 16 13" className="fill-green-500">
-    <path d="M5.8535 12.6631C5.65824 12.8584 5.34166 12.8584 5.1464 12.6631L0.678505 8.1952C0.483242 7.99994 0.483242 7.68336 0.678505 7.4881L2.32921 5.83739C2.52467 5.64193 2.84166 5.64216 3.03684 5.83791L5.14622 7.95354C5.34147 8.14936 5.65859 8.14952 5.85403 7.95388L13.3797 0.420561C13.575 0.22513 13.8917 0.225051 14.087 0.420383L15.7381 2.07143C15.9333 2.26669 15.9333 2.58327 15.7381 2.77854L5.8535 12.6631Z" />
-  </svg>
-);
+const taxes: FeatureItem[] = [
+  {
+    title: "VAT",
+    body: "Registration, scheme selection and quarterly returns filed under Making Tax Digital, with the records to back them up.",
+  },
+  {
+    title: "Corporation Tax",
+    body: "CT600 preparation and filing, with computations reconciled to your statutory accounts.",
+  },
+  {
+    title: "Income Tax",
+    body: "Self Assessment for directors and sole traders, prepared from books that are already clean.",
+  },
+  {
+    title: "PAYE and payroll",
+    body: "RTI submissions, payslips and year-end reporting, integrated with your bookkeeping rather than bolted on.",
+  },
+];
 
-const UKTax = () => {
-  const List = ({ text }: { text: string }) => (
-    <p className="mb-5 flex items-center text-lg font-medium text-body-color">
-      <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
-        {checkIcon}
-      </span>
-      {text}
-    </p>
-  );
+const promises = [
+  "No missed deadlines",
+  "Error-free submissions",
+  "Simplified tax rules",
+  "Tailored tax savings",
+  "Hassle-free HMRC audits",
+  "Support when you need it",
+];
 
+function Tick() {
   return (
-    <section id="uk-tax-services" className="pt-16 md:pt-20 lg:pt-28">
-      <div className="container">
-        <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
-          <div className="-mx-4 flex flex-wrap items-center">
-            <div className="w-full px-4 lg:w-1/2">
-              <SectionTitle
-                title="UK Tax Services"
-                paragraph="Stay compliant with UK tax laws through expert bookkeeping and accounting services. We offer tailored solutions for VAT, Corporation Tax, Income Tax, and PAYE, ensuring accurate filing and timely submissions. Let us handle your tax obligations, so you can focus on growing your business."
-                mb="44px"
-              />
-
-              <div className="mb-12 max-w-[570px] lg:mb-0" data-wow-delay=".15s">
-                <div className="mx-[-12px] flex flex-wrap">
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="No missed deadlines" />
-                    <List text="Simplified tax rules" />
-                    <List text="Hassle-free HMRC audits" />
-                    <List text="Tailored tax savings" />
-                  </div>
-
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Error-free submissions" />
-                    <List text="24/7 expert support" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0">
-                <Image
-                  src="/images/services/tax.jpg"
-                  alt="UK Tax Services"
-                  fill
-                  className="mx-auto max-w-full rounded-lg drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
-                />
-                <Image
-                  src="/images/services/tax.jpg"
-                  alt="UK Tax Services"
-                  fill
-                  className="mx-auto hidden max-w-full rounded-lg drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section className="py-20" style={{ backgroundColor: "#fd9e3a" }}>
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-            Transform Your Tax Services
-          </h2>
-          <p className="mt-4 text-lg text-gray-200">
-            Let Accotomate handle your Taxes with intelligent automation and tech-forward solutions.
-          </p>
-          <a
-            href="/contact"
-            className="mt-8 inline-block rounded-lg bg-white px-8 py-3 text-lg font-semibold text-orange-400 transition-all hover:bg-gray-100"
-          >
-            Contact Us
-          </a>
-        </div>
-      </section>
-    </section>
+    <svg viewBox="0 0 16 16" aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-accent">
+      <path
+        d="M2.5 8.5 6 12l7.5-8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
-};
+}
 
-export default UKTax;
+export default function Taxes() {
+  return (
+    <>
+      <PageHero
+        eyebrow="UK Taxes"
+        title="Filed accurately, filed on time"
+        lede="VAT, Corporation Tax, Income Tax and PAYE handled by qualified UK accountants. We take on the compliance calendar so you can stop watching it."
+        primaryCta={{ label: "Get started", href: site.bookingUrlServices }}
+        secondaryCta={{ label: "Talk to us", href: "/contact" }}
+        image={{
+          src: "/images/services/tax.jpg",
+          alt: "Illustration of tax preparation: a person completing a tax return beside a calculator, calendar and correspondence.",
+        }}
+      />
+
+      <FeatureGrid
+        eyebrow="What we handle"
+        title="The full UK compliance calendar"
+        lede="Because we already keep the books, the filings are built from records that are current and reconciled."
+        items={taxes}
+        columns={2}
+      />
+
+      <Section tone="subtle" space="loose">
+        <Container width="wide">
+          <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-20">
+            <SectionHeading
+              eyebrow="What you get"
+              title="Compliance that stops being your problem"
+              lede="Tax work goes wrong when the underlying records are messy. We fix the records first, then the filings take care of themselves."
+            />
+
+            <Reveal>
+              <ul className="grid gap-4 sm:grid-cols-2">
+                {promises.map((promise) => (
+                  <li
+                    key={promise}
+                    className="flex gap-3 text-[0.9375rem] font-medium text-ink"
+                  >
+                    <Tick />
+                    <span>{promise}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+
+      <CtaBand
+        title="Get the filings off your desk."
+        lede="Book a 30-minute call and we'll review your current compliance position and deadlines."
+        bookingUrl={site.bookingUrlServices}
+      />
+    </>
+  );
+}
