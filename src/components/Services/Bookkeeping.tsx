@@ -67,7 +67,7 @@ export default function Bookkeeping() {
     <>
       <PageHero
         eyebrow="Tech-Driven Bookkeeping"
-        title="Books that close themselves"
+        title="Books that close themselve"
         lede="We replace manual bookkeeping with intelligent, automated workflows — built for accuracy and speed, and integrated with the accounting software you already run."
         primaryCta={{ label: "Get started", href: site.bookingUrlServices }}
         secondaryCta={{ label: "Talk to us", href: "/contact" }}
