@@ -14,15 +14,14 @@ export default function Hero() {
           </span>
 
           <h1 className="mt-8 max-w-[14ch] text-display text-ink">
-            Bookkeeping that runs itself.
+           Bookkeeping, but fast.
           </h1>
 
           <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16">
             <p className="max-w-prose text-lede font-normal text-ink-muted">
-              We&rsquo;re accountants and developers who automate the parts of
-              finance that shouldn&rsquo;t need a human — data entry,
-              reconciliations, month-end reporting. You get clean books, on time,
-              every time.
+              Know the numbers that matter before they become problems.
+We combine expert bookkeeping with automated financial alerts, so you know when cash drops, spending crosses a limit, invoices stay unpaid, or bills are coming due — without waiting for month-end.
+
             </p>
 
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
@@ -39,19 +38,7 @@ export default function Hero() {
 
       {/* The real product screenshot, full width and cropped into a band. */}
       <div className="mt-16 md:mt-20">
-        <Container width="wide">
-          <div className="animate-fade-up animate-delay-2 overflow-hidden rounded-xl border border-line bg-surface-stone">
-            <Image
-              src="/images/video/webimg.jpg"
-              alt="The Accotomate Journal Entry Integration open in Google Sheets, showing a month of posted journal entries alongside the template upload panel."
-              width={1600}
-              height={711}
-              priority
-              className="h-auto w-full"
-              sizes="100vw"
-            />
-          </div>
-        </Container>
+        
       </div>
     </section>
   );

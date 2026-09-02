@@ -4,16 +4,16 @@ import Section from "@/components/ui/Section";
 
 const pains = [
   {
-    title: "Hours lost to re-keying",
-    body: "Bills, invoices and journal entries typed in by hand — the same numbers, twice, into two systems.",
+    title: "You crossed the budget days ago",
+    body: "Marketing reached 27% of revenue before anyone noticed it had crossed your 20% limit.",
   },
   {
-    title: "Reports out of date on arrival",
-    body: "By the time the export is formatted and the figures are checked, the month has already moved on.",
+    title: "£30K has been sitting unpaid",
+    body: "£30K in customer invoices has now been outstanding for 30+ days. You needed to know sooner.",
   },
   {
-    title: "Mistakes found at year end",
-    body: "A miscoded transaction in March surfaces in the year-end review, when fixing it costs the most.",
+    title: "Cash dropped below your limit",
+    body: "You wanted to keep £50K in the bank. Your balance crossed that limit days ago.",
   },
 ];
 
@@ -23,21 +23,18 @@ export default function Problem() {
       <Container width="wide">
         <Reveal>
           <h2 className="max-w-[18ch] text-h2 text-white">
-            Manual data entry.
+            The number was there.
+          
             <br />
-            Month-end scramble.
-            <br />
-            <span className="text-accent">Errors you find in April.</span>
+            <span className="text-accent">You just found out too late.</span>
           </h2>
 
-          <p className="mt-8 max-w-prose text-lede text-white/70">
-            Most finance teams aren&rsquo;t short on expertise. They&rsquo;re short on
-            hours. The work that eats the week is precisely the work a machine
-            should be doing.
+          <p className="mt-3 max-w-prose text-lede text-white/70">
+            Your books can be perfectly accurate and still be too late to help you make the decision.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-md bg-line-inverse md:grid-cols-3">
+        <div className="mt-5 grid gap-px overflow-hidden rounded-md bg-line-inverse md:grid-cols-3">
           {pains.map((pain, index) => (
             <Reveal key={pain.title} delay={index * 80} className="h-full">
               <div className="h-full bg-ink p-8">

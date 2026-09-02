@@ -11,13 +11,13 @@ export type Service = {
 export const services: Service[] = [
   {
     id: "bookkeeping",
-    title: "Tech-Driven Bookkeeping",
+    title: "Bookkeeping that stays current",
     summary:
-      "End-to-end automation for bills, invoices and journal entries, integrated with QuickBooks, Xero, Sage and FreshBooks.",
+      "Your books stay clean and current as the month moves, so youre not waiting until month-end to understand where the business stands.",
     points: [
-      "Automated transaction capture",
-      "Scheduled bank reconciliations",
-      "Tax-ready records year round",
+      "Transactions captured & categorised in real time",
+      "Banks reconciled and books kept current",
+      "Clean, tax-ready records year-round",
     ],
     href: "/bookkeeping",
     image: "/images/services/bookkeeping.png",
@@ -26,47 +26,49 @@ export const services: Service[] = [
   },
   {
     id: "automation",
-    title: "Financial Workflow Automation",
+    title: "Numbers that come to you",
     summary:
-      "Real-time sync between QuickBooks and Google Sheets, so reports build themselves instead of waiting on a manual export.",
+      "We send automatic WhatsApp or email notifications when the numbers and thresholds that matter to your business need your attention.",
     points: [
-      "Live data, no manual exports",
-      "Reports that refresh on a schedule",
-      "AP/AR ageing at a glance",
+      "Cash & spending threshold alerts",
+      "30+ day overdue customer alerts",
+      "Payroll exceeded the set limit",
     ],
+    
     href: "/quickbooks",
     image: "/images/video/webimg.jpg",
     imageAlt:
       "The Accotomate Journal Entry Integration open in Google Sheets, showing posted journal entries and the template upload panel.",
   },
-  {
-    id: "tax",
-    title: "UK Taxes",
-    summary:
-      "VAT, Corporation Tax, Income Tax and PAYE handled by accountants who file on time, every time.",
-    points: [
-      "No missed deadlines",
-      "Error-free submissions",
-      "HMRC audits handled",
-    ],
-    href: "/taxes",
-    image: "/images/services/tax.jpg",
-    imageAlt:
-      "Illustration of tax preparation: a person completing a tax return beside a calculator, calendar and correspondence.",
-  },
-  {
+   {
     id: "outsourcing",
-    title: "Outsourced Accountants",
+    title: "Custom Finance Automation",
     summary:
-      "Qualified accountants embedded in your team at 60–70% of in-house cost — one fixed monthly fee, no payroll, insurance or pensions.",
+      "We build custom automations for repetitive finance tasks your accounting software still leaves your team doing manually.",
     points: [
-      "One fixed monthly cost",
-      "No payroll or pension overhead",
-      "Scale the team up or down",
+      "Send payment reminders automatically",
+      "Update hundreds of records at once",
+      "Move data between systems automatically",
     ],
     href: "/contact",
     image: "/images/about/about1.jpg",
     imageAlt:
       "Illustration of accountants reviewing financial reports, receipts and charts together.",
   },
+  {
+    id: "tax",
+    title: "UK Tax & Compliance",
+    summary:
+      "Your tax and compliance stay connected to the books we already maintain, keeping records organised and deadlines easier to manage throughout the year.",
+    points: [
+      "VAT returns & compliance",
+      "Corporation Tax & year-end accounts",
+      "PAYE & ongoing tax support",
+    ],
+    href: "/taxes",
+    image: "/images/services/tax.jpg",
+    imageAlt:
+      "Illustration of tax preparation: a person completing a tax return beside a calculator, calendar and correspondence.",
+  },
+ 
 ];

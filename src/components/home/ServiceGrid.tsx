@@ -32,7 +32,7 @@ export default function ServiceGrid() {
       <Container width="wide">
         <SectionHeading
           eyebrow="What we do"
-          title="Four ways we take finance work off your desk"
+          title="Four ways we take the slow out of finance."
           lede="Start with one, or hand over the lot. Every engagement is built on the accounting software you already use."
         />
 
