@@ -6,16 +6,16 @@ import VideoLightbox from "@/components/ui/VideoLightbox";
 
 const highlights = [
   {
-    title: "Journal entries, uploaded in bulk",
-    body: "Templates map your ledger structure once. After that, a month of entries posts in a single upload instead of line by line.",
+    title: "Marketing expense crosses 20% of revenue limit?",
+    body: "You get notified.",
   },
   {
-    title: "Your data, in a sheet you control",
-    body: "Everything lands in Google Sheets, so your team keeps working in a tool they already know — no new software to learn.",
+    title: "Cash drops below £50K?",
+    body: "You get notified.",
   },
   {
-    title: "Two-way, and always current",
-    body: "Changes flow back into QuickBooks on a schedule. Reports stop being snapshots and start being live.",
+    title: "£30K becomes 30+ days overdue?",
+    body: "You get notified.",
   },
 ];
 
@@ -25,11 +25,11 @@ export default function ProductShowcase() {
       <Container width="wide">
         <SectionHeading
           eyebrow="See it working"
-          title="This is the actual integration, running on a client's books"
-          lede="Not a mockup. Our Journal Entry Integration posting a month of entries straight into Google Sheets from QuickBooks."
+          title="What if your books told you when it happened?"
+          lede="We set the numbers that matter to you and automatically let you know when something needs your attention."
         />
 
-        <div className="mt-14 grid items-start gap-12 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)] lg:gap-16">
+        <div className="mt-8 grid items-start gap-12 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)] lg:gap-16">
           {/* <Reveal>
             <VideoLightbox
               videoId="L61p2uyiMSo"
