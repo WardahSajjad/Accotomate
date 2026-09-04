@@ -31,7 +31,7 @@ export default function Problem() {
           <p className="mt-3 max-w-prose text-lede text-white/70">
             Your books can be completely accurate and still leave you behind.
             When margins start falling, spending runs over budget or revenue
-            slips off target, finding out at month-end means you've lost the
+            slips off target, finding out at month&apos;s end means you&apos;ve lost the
             most valuable thing your numbers could have given you — time to act.
           </p>
         </Reveal>
