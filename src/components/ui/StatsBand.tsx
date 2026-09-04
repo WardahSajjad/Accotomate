@@ -13,8 +13,8 @@ type StatsBandProps = {
 
 export default function StatsBand({
   eyebrow = "Results",
-  title = "What changes once it's automated",
-  lede = "Typical outcomes for clients who move their bookkeeping onto our automated workflows.",
+  title = "Know sooner. Act sooner.",
+  lede = "When your books stay current and the right numbers come to you, you spend less time finding out what happened — and more time doing something about it.",
   tone = "subtle",
 }: StatsBandProps) {
   return (
@@ -38,7 +38,9 @@ export default function StatsBand({
               <dt className="order-2 mt-3 text-[0.9375rem] leading-relaxed text-ink-muted">
                 {stat.label}
               </dt>
-              <dd className="order-1 text-stat text-ink">{stat.value}</dd>
+              <dd className="order-1 text-[1.875rem] text-stat font-bold text-ink">
+                {stat.value}
+              </dd>
             </Reveal>
           ))}
         </dl>

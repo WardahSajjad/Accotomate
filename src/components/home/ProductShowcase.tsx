@@ -6,7 +6,7 @@ import VideoLightbox from "@/components/ui/VideoLightbox";
 
 const highlights = [
   {
-    title: "Marketing expense crosses 20% of revenue limit?",
+    title: "Marketing spend just crossed your 20% of revenue limit?",
     body: "You get notified.",
   },
   {
@@ -24,9 +24,9 @@ export default function ProductShowcase() {
     <Section tone="subtle" space="loose" id="how-it-looks">
       <Container width="wide">
         <SectionHeading
-          eyebrow="See it working"
+          eyebrow="Stay Ahead"
           title="What if your books told you when it happened?"
-          lede="We set the numbers that matter to you and automatically let you know when something needs your attention."
+          lede="You choose the numbers and limits you want to stay on top of. We track them and send an automatic alert straight to your WhatsApp or email when something needs your attention."
         />
 
         <div className="mt-8 grid items-start gap-12 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)] lg:gap-16">
@@ -47,7 +47,7 @@ export default function ProductShowcase() {
             {highlights.map((item, index) => (
               <Reveal key={item.title} delay={index * 80}>
                 <h3 className="text-h3 text-ink">{item.title}</h3>
-                <p className="mt-2.5 text-[0.9375rem] leading-relaxed text-ink-muted">
+                <p className="text-h4 mt-1.5 text-[1.2375rem] leading-relaxed text-ink-muted">
                   {item.body}
                 </p>
               </Reveal>

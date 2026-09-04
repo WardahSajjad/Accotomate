@@ -37,8 +37,9 @@ export default function Home() {
       <Marquee items={marqueeItems} className="mt-20 md:mt-28" />
       <TrustStrip />
       <Problem />
-      <ServiceGrid />
       <ProductShowcase />
+      <ServiceGrid />
+
       <TeamBand />
       <StatsBand />
       <HowItWorks />
