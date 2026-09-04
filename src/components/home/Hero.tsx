@@ -14,14 +14,16 @@ export default function Hero() {
           </span>
 
           <h1 className="mt-8 max-w-[14ch] text-display text-ink">
-           Bookkeeping, but fast.
+            Bookkeeping, but fast.
           </h1>
 
           <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16">
             <p className="max-w-prose text-lede font-normal text-ink-muted">
-              Know the numbers that matter before they become problems.
-We combine expert bookkeeping with automated financial alerts, so you know when cash drops, spending crosses a limit, invoices stay unpaid, or bills are coming due — without waiting for month-end.
-
+              Know the numbers that matter before they become problems. We
+              combine expert bookkeeping with automated financial alerts, so you
+              know when cash drops, spending crosses a limit, invoices stay
+              unpaid, or bills are coming due — without waiting for month-end,
+              chasing your team, or opening your laptop.
             </p>
 
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
@@ -37,9 +39,7 @@ We combine expert bookkeeping with automated financial alerts, so you know when 
       </Container>
 
       {/* The real product screenshot, full width and cropped into a band. */}
-      <div className="mt-16 md:mt-20">
-        
-      </div>
+      <div className="mt-16 md:mt-20"></div>
     </section>
   );
 }

@@ -6,16 +6,16 @@ import VideoLightbox from "@/components/ui/VideoLightbox";
 
 const highlights = [
   {
-    title: "Marketing spend just crossed your 20% of revenue limit?",
-    body: "You get notified.",
+    title: "A £20K bill is due next week?",
+    body: "You know before it hits your cash.",
   },
   {
-    title: "Cash drops below £50K?",
-    body: "You get notified.",
+    title: "Payroll just crossed 35% of revenue?",
+    body: "You know as soon as it crosses your limit.",
   },
   {
-    title: "£30K becomes 30+ days overdue?",
-    body: "You get notified.",
+    title: "This month’s revenue is falling behind target?",
+    body: "You know while there’s still time to catch up.",
   },
 ];
 
@@ -26,7 +26,7 @@ export default function ProductShowcase() {
         <SectionHeading
           eyebrow="Stay Ahead"
           title="What if your books told you when it happened?"
-          lede="You choose the numbers and limits you want to stay on top of. We track them and send an automatic alert straight to your WhatsApp or email when something needs your attention."
+          lede="We automate the day-to-day recording of income and expenses, keeping your numbers current as the business moves. Your alerts are built around the numbers, percentages and limits that matter most to you, bringing anything that needs your attention straight to your WhatsApp or email."
         />
 
         <div className="mt-8 grid items-start gap-12 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)] lg:gap-16">

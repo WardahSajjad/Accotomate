@@ -4,16 +4,16 @@ import Section from "@/components/ui/Section";
 
 const pains = [
   {
-    title: "You crossed the budget days ago",
-    body: "Marketing reached 27% of revenue before anyone noticed it had crossed your 20% limit.",
+    title: "Marketing crossed your 20% limit",
+    body: "You planned to stop at 20%. You’re already at 27% and still spending. Every day you find out late is more budget already gone.",
   },
   {
     title: "£30K has been sitting unpaid",
     body: "£30K in customer invoices has now been outstanding for 30+ days. You needed to know sooner.",
   },
   {
-    title: "Cash dropped below your limit",
-    body: "You wanted to keep £50K in the bank. Your balance crossed that limit days ago.",
+    title: "Your margin dropped below 35%",
+    body: "Sales still look strong, but you’re making less money on every one. The sooner you know, the sooner you can find out what’s eating into your profit.",
   },
 ];
 
@@ -24,13 +24,15 @@ export default function Problem() {
         <Reveal>
           <h2 className="max-w-[18ch] text-h2 text-white">
             The number was there.
-          
             <br />
             <span className="text-accent">You just found out too late.</span>
           </h2>
 
           <p className="mt-3 max-w-prose text-lede text-white/70">
-            Your books can be perfectly accurate and still be too late to help you make the decision.
+            Your books can be completely accurate and still leave you behind.
+            When margins start falling, spending runs over budget or revenue
+            slips off target, finding out at month-end means you've lost the
+            most valuable thing your numbers could have given you — time to act.
           </p>
         </Reveal>
 

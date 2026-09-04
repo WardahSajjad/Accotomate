@@ -10,54 +10,58 @@ import { site } from "@/content/site";
 
 const capabilities: FeatureItem[] = [
   {
-    title: "Financial data consolidation",
-    body: "Transactions, balances and ledgers pulled into one structured sheet instead of a folder of exports.",
+    title: "Automatic payment reminders",
+    body: "Still chasing overdue invoices manually? Reminders can go out automatically based on how long an invoice has been unpaid.",
   },
   {
-    title: "Ledger reconciliations",
-    body: "Ledgers reconcile against source data automatically, with exceptions surfaced rather than buried.",
+    title: "Invoice creation at scale",
+    body: "Creating the same invoices from orders, bookings or sales data? We can turn that data into invoices automatically and send them straight into QuickBooks/Xero.",
   },
   {
-    title: "Scheduled bank reconciliations",
-    body: "Reconciliation runs on a schedule you set, so the position is current when you look at it.",
+    title: "Late-payment fees",
+    body: "When an invoice remains unpaid past the agreed date, the correct late fee can be calculated and added automatically based on your rules.",
   },
   {
-    title: "Budgeting and forecasting",
-    body: "Budget and forecast models update themselves as actuals land, keeping projections honest.",
+    title: "Bulk customer, invoice & bill updates",
+    body: "Change hundreds of customer records, invoices or bills in one go — without your team opening and updating them one by one.",
   },
   {
-    title: "Ad-hoc management reports",
-    body: "Custom report templates that rebuild on new data — no reformatting, no stale figures.",
+    title: "Automatic bank-feed clearing",
+    body: "Repeat transactions are handled automatically, so your team only steps in when something looks different or needs a judgement call.",
   },
   {
-    title: "AP/AR tracking",
-    body: "Payables and receivables ageing stays live, so nothing slips past its due date unnoticed.",
+    title: "Recurring transaction updates",
+    body: "If your business uses hundreds of recurring invoice or bill templates, we can update, delete or recreate them in bulk when changes are needed.",
   },
   {
-    title: "Real-time insight",
-    body: "Cash flow, profitability and outstanding liabilities visible the moment the data changes.",
+    title: "Data movement between systems",
+    body: "Sales in one platform, expenses in another and accounting in QuickBooks or Xero? We connect them so data flows automatically and your records stay reconciled across systems.",
   },
   {
-    title: "Ongoing optimisation",
-    body: "We keep tuning the workflows as your reporting needs change. It isn't a build-and-leave.",
+    title: "Scheduled data exports/imports",
+    body: "Want a specific report updated in Google Sheets or Excel at 9am, or invoices pushed into QuickBooks at 12pm? We schedule those imports and exports to run automatically.",
+  },
+  {
+    title: "Got the clumsiest workflow?",
+    body: "Show us the finance task you’ve given up trying to automate — the one no off-the-shelf tool can handle. We’ll build the automation for it.",
   },
 ];
 
 const steps = [
   {
     number: "01",
-    title: "Map your ledger",
-    body: "We build a template that matches your chart of accounts and entry structure — once.",
+    title: "Show us how you do it today",
+    body: "Walk us through the task your team keeps repeating — what starts it, what they do, and where the time gets lost.",
   },
   {
     number: "02",
-    title: "Upload in bulk",
-    body: "A month of journal entries posts from that template in a single action, not line by line.",
+    title: "We find the rules",
+    body: "We identify the parts that follow the same pattern every time and separate them from the parts that still need human judgement.",
   },
   {
     number: "03",
-    title: "Stays in sync",
-    body: "Scheduled refreshes keep QuickBooks and Sheets aligned, with exceptions flagged for review.",
+    title: "We build it",
+    body: "We build the automation around the systems you already use, test it properly, and leave your team to step in only where they actually need to.",
   },
 ];
 
@@ -66,8 +70,8 @@ export default function Quickbooks() {
     <>
       <PageHero
         eyebrow="Financial Workflow Automation"
-        title="QuickBooks and Sheets, always in sync"
-        lede="No manual exports, no outdated reports. Transactions, balances, AP/AR ageing and reconciliations flow into structured spreadsheets automatically — and stay current."
+        title="Your finance team shouldn’t spend hours doing what a rule can do automatically."
+        lede="We build custom automations for the repetitive finance work your software still leaves behind — so your team spends less time repeating the same tasks and more time on the work that actually needs them."
         primaryCta={{ label: "Get started", href: site.bookingUrlServices }}
         secondaryCta={{ label: "Talk to us", href: "/contact" }}
         // media={
@@ -89,8 +93,8 @@ export default function Quickbooks() {
         <Container width="wide">
           <SectionHeading
             eyebrow="How the integration works"
-            title="Three steps, then it runs itself"
-            lede="We work inside the QuickBooks account and Google Workspace you already have. Nothing to migrate."
+            title="Bring us the repetitive task."
+            lede="The payment reminders you send every Monday. The late fees someone calculates one invoice at a time. The customer records your team updates manually. The same bank transactions they keep clearing. The data they keep copying between systems. Show us the process — we’ll see what can be automated."
           />
 
           <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">

@@ -5,9 +5,9 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const steps = [
   {
-    number: "01",
-    title: "We map what's manual",
-    body: "A short review of how finance actually runs today — which entries are typed by hand, where reports come from, what breaks at month-end.",
+    number: "01 - We start with a conversation",
+    title: "Need us to run your bookkeeping?",
+    body: "We’ll understand how your books are handled today, how income and expenses move through the business, and which numbers you need to stay on top of.",
   },
   {
     number: "02",
@@ -27,8 +27,8 @@ export default function HowItWorks() {
       <Container width="wide">
         <SectionHeading
           eyebrow="How it works"
-          title="Live in weeks, not quarters"
-          lede="No rip-and-replace. We work inside the accounting software you already use, so nothing stops while we build."
+          title="Want to make faster decisions with numbers you can rely on?"
+          lede="Whether you want us to run your bookkeeping day to day or already have a finance team and need something specific automated, we start with how your business works today — and what could work better."
         />
 
         <ol className="mt-16 grid gap-10 md:grid-cols-3 md:gap-8">

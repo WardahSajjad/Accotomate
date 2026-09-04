@@ -35,10 +35,10 @@ export default function StatsBand({
               delay={index * 70}
               className="flex h-full flex-col bg-surface p-8"
             >
-              <dt className="order-2 mt-3 text-[0.9375rem] leading-relaxed text-ink-muted">
+              <dt className="order-2 mt-3 text-[1rem] leading-relaxed text-ink-muted">
                 {stat.label}
               </dt>
-              <dd className="order-1 text-[1.875rem] text-stat font-bold text-ink">
+              <dd className="order-1 text-[1.6rem] text-stat font-bold text-ink">
                 {stat.value}
               </dd>
             </Reveal>
