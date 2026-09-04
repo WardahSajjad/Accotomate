@@ -38,9 +38,7 @@ export default function StatsBand({
               <dt className="order-2 mt-3 text-[1rem] leading-relaxed text-ink-muted">
                 {stat.label}
               </dt>
-              <dd className="order-1 text-[1.6rem] text-stat font-bold text-ink">
-                {stat.value}
-              </dd>
+              <dd className=" text-bold text-h3 text-ink">{stat.value}</dd>
             </Reveal>
           ))}
         </dl>

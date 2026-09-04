@@ -5,7 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const steps = [
   {
-    number: "01 - We start with a conversation",
+    number: "01",
     title: "Need us to run your bookkeeping?",
     body: "We’ll understand how your books are handled today, how income and expenses move through the business, and which numbers you need to stay on top of.",
   },
